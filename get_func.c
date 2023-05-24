@@ -9,8 +9,9 @@
 void (*get_func(char *op))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t operations[] = {
-		{"push", push},
-		{"pall", pall},
+		{"push", push}, {"swap", swap},
+		{"pall", pall}, {"nop", nop},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 
