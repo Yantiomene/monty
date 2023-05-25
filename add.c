@@ -24,12 +24,6 @@ void _add(stack_t **head, unsigned int line)
 		free_var();
 		exit(EXIT_FAILURE);
 	}
-	if ((*head)->n == 0)
-	{
-		fprintf(stderr, "L%u: division by zero\n", line);
-		free_var();
-		exit(EXIT_FAILURE);
-	}
 	((*head)->next)->n += (*head)->n;
 	pop(head, line);
 }
