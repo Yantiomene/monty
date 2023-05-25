@@ -7,16 +7,16 @@
  *
  * Return: nothing
  */
-void pstr(stack_t **head, __attribute__ ((unused))unsigned int line)
+void pstr(stack_t **head, unsigned int line)
 {
-	if (!head || !*head)
+	stack_t *tmp;
+
+	(void)line;
+	tmp = *head;
+	while (tmp && (tmp->n > 0) && (tmp->n <= 127))
 	{
-		printf("\n");
-		free_var();
+		printf("%c", tmp->n);
+		tmp = tmp->next;
 	}
-	if ((*head)->n < 0 || (*head)->n > 127)
-	{
-		free_var();
-	}
-	printf("%c\n", (*head)->n);
+	printf("\n");
 }
