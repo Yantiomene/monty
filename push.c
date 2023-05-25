@@ -26,5 +26,8 @@ void push(stack_t **head, unsigned int line)
 		}
 	}
 	n = atoi(gvar.arg);
-	add_dnodeint(head, n);
+	if (gvar.s_q == 1)
+		add_dnodeint(head, n);
+	else if (gvar.s_q == 0)
+		add_dnodeint_end(head, n);
 }

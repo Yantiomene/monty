@@ -46,6 +46,7 @@ typedef struct instruction_s
  * @head: pointer to the head of the stack
  * @buf: buffer used to read the current line
  * @arg: argument of the instruction
+ * @s_q: flag - 1 for stack and 0 for queue (default set to 1)
  *
  * Description: Global variable that will be shared on
  * source fileto hanlde instructions
@@ -57,6 +58,7 @@ typedef struct data_s
 	stack_t *head;
 	char *buf;
 	char *arg;
+	int s_q;
 } data_t;
 
 extern data_t gvar;
@@ -67,7 +69,7 @@ void free_var(void);
 
 /* dll functions */
 stack_t *add_dnodeint(stack_t **head, const int n);
-stack_t *add_dnodeint(stack_t **head, const int n);
+stack_t *add_dnodeint_end(stack_t **head, const int n);
 void free_dlistint(stack_t *head);
 
 /* print_error */
@@ -90,6 +92,8 @@ void pop(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
+void stack(stack_t **stack, unsigned int line_number);
+void _queue(stack_t **stack, unsigned int line_number);
 
 
 #endif

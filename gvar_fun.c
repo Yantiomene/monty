@@ -13,6 +13,7 @@ void init_var(FILE *fd)
 	gvar.head = NULL;
 	gvar.buf = NULL;
 	gvar.arg = NULL;
+	gvar.s_q = 1;
 }
 
 /**
