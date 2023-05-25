@@ -20,7 +20,7 @@ void _sub(stack_t **head, unsigned int line)
 	}
 	if (count < 2)
 	{
-		fprintf(stderr, "L%u: can't add, stack too short\n", line);
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line);
 		free_var();
 		exit(EXIT_FAILURE);
 	}
