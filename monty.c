@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 	size_t size = 256;
 	ssize_t num_read = 0;
 	void (*f)(stack_t **stack, unsigned int line_number);
-	char *tokens[2] = {NULL, NULL};
+	char *token = NULL;
 
 	if (argc != 2)
 	{
@@ -32,14 +32,14 @@ int main(int argc, char **argv)
 	num_read = _getline(&gvar.buf, &size, fd);
 	while (num_read != -1)
 	{
-		tokens[0] = strtok(gvar.buf, " \t\n");
-		if (tokens[0] && tokens[0][0] != '#')
+		token = strtok(gvar.buf, " \t\n");
+		if (token && token[0] != '#')
 		{
-			f = get_func(tokens[0]);
+			f = get_func(token);
 			if (!f)
 			{
 			fprintf(stderr, "L%u: ", gvar.line);
-			fprintf(stderr, "unknown instruction %s\n", tokens[0]);
+			fprintf(stderr, "unknown instruction %s\n", token);
 			free_var();
 			exit(EXIT_FAILURE);
 			}
