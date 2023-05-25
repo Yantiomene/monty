@@ -10,7 +10,7 @@
 
 void rotr(stack_t **head, unsigned int line)
 {
-	stack_t *second, *temp, *last;
+	stack_t *temp, *last;
 
 	(void)line;
 
@@ -20,14 +20,8 @@ void rotr(stack_t **head, unsigned int line)
 		while (temp->next)
 			temp = temp->next;
 
-		last = temp->prev;
-		second = (*head)->next;
-		last->next = *head;
-		second->prev = temp;
-		(last->next)->next = NULL;
-		(last->next)->prev = last;
-		*head = temp;
-		(*head)->next = second;
-		(*head)->prev = NULL;
+		last = temp;
+		while (last->prev)
+			last = last->prev;
 	}
 }
