@@ -94,6 +94,6 @@ void pchar(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void stack(stack_t **stack, unsigned int line_number);
 void _queue(stack_t **stack, unsigned int line_number);
-
+void _add(stack_t **stack, unsigned int line_number);
 
 #endif
