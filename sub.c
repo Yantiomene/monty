@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _sub - computes the rest of the division of 2nd element by the 1st element
+ * _sub - Subtract elements
  * @head: pointer to the pointer to the head of the stack
  * @line: current line number
  *
