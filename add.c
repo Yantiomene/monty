@@ -9,16 +9,7 @@
  */
 void _add(stack_t **head, unsigned int line)
 {
-	stack_t *tmp;
-	unsigned int count = 0;
-
-	tmp = *head;
-	while (tmp)
-	{
-		count++;
-		tmp = tmp->next;
-	}
-	if (count < 2)
+	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't add, stack too short\n", line);
 		free_var();
