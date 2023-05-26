@@ -19,7 +19,7 @@ void rotr(stack_t **head, unsigned int line)
 		temp = *head;
 		while (temp->next)
 			temp = temp->next;
-		
+
 		last = temp->prev;
 		last->next = NULL;
 		temp->next = *head;
