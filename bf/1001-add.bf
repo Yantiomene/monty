@@ -8,4 +8,5 @@
 [
 	<------          Substract 6 from cell #0
 	>-               subtract 1 from cell #1
+]
 <.                       Prints out cell 0 which has the value a plus b plus 48
